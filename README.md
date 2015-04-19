@@ -33,7 +33,7 @@
 		</ul>
 	</li>
 	<li>
-		<h4>Включены следующие jQuery плагины (/libs):</h4>
+		<h4>Включены следующие базовые jQuery плагины (/libs):</h4>
 		<ul>
 			<li><a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a> / <a href="http://webdesign-master.ru" target="_blank">animate-css.js</a> / <a href="http://imakewebthings.com/waypoints/" target="_blank">Waypoints</a> - плагины для простого добавления анимации на страницы при скролле;</li>
 			<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> - Полная и облегченная (bootstrap-grid.min.css) версия Bootstrap.
