@@ -15,7 +15,7 @@
 		<ul>
 			<li>fonts.css (sass) - файл для подключения шрифтов с примером;</li>
 			<li>main.css (sass) - основные пользовательские стили;</li>
-			<li>media.css (sass) - файл медиа запросов для адаптивной верстки с первоначальной Desktop First и Mobile First структурой;</li>
+			<li>media.css - файл медиа запросов для адаптивной верстки с первоначальной Desktop First и Mobile First структурой;</li>
 			<li>Подключенная и готовая к использованию библиотека миксинов <a href="http://bourbon.io/" target="_blank">Bourbon</a> (_clean_sass).</li>
 		</ul>
 	</li>
