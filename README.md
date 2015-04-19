@@ -36,8 +36,9 @@
 		<h4>Включены следующие jQuery плагины (/libs):</h4>
 		<ul>
 			<li><a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a> / <a href="http://webdesign-master.ru" target="_blank">animate-css.js</a> / <a href="http://imakewebthings.com/waypoints/" target="_blank">Waypoints</a> - плагины для простого добавления анимации на страницы при скролле;</li>
-			<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> - Полная и облегченная (bootstrap-grid.min.css) версия Bootstrap. В index.html подключена облегченная - только сетка, без JS.</li>
-			<li>html5shiv - HTML5 в IE;</li>
+			<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> - Полная и облегченная (bootstrap-grid.min.css) версия Bootstrap.
+				<br>В index.html подключена облегченная - только сетка, без JS.</li>
+			<li><a href="https://github.com/aFarkas/html5shiv" target="_blank">html5shiv</a> - HTML5 в IE;</li>
 			<li><a href="https://jquery.com" target="_blank">jQuery</a> первой ветки;</li>
 			<li><a href="http://modernizr.com" target="_blank">modernizr</a>;</li>
 			<li><a href="https://github.com/scottjehl/Respond" target="_blank">Respond.js</a></li>
