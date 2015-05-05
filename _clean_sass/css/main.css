@@ -12,7 +12,7 @@ html.js .loader {
     background-image: url("../img/preloader.gif");
     background-size: cover;
     background-repeat: no-repeat;
-    background-posirion: center center;
+    background-position: center center;
     background-color: #fff;
     height: 60px;
     width: 60px;
