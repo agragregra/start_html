@@ -45,38 +45,33 @@
 	<script src="libs/respond/respond.min.js"></script>
 	<![endif]-->
 
-	<!-- Load CSS (remove/comment after release) -->
+	<!-- Load CSS -->
 	<script>
-	//Load Libs CSS
-	var ms=document.createElement("link");ms.rel="stylesheet";
-	ms.href="libs/animate/animate.css";document.getElementsByTagName("head")[0].appendChild(ms);
+		function loadCSS(hf) {
+			var ms=document.createElement("link");ms.rel="stylesheet";
+			ms.href=hf;document.getElementsByTagName("head")[0].appendChild(ms);
+		}
+		loadCSS("libs/animate/animate.css"); //Load Libs CSS: Animate CSS
+		loadCSS("_header.css");              //Header Styles (compress & paste to header after release)
+		loadCSS("_main.css");                //User Styles: Main
+		loadCSS("_media.css");               //User Styles: Media
+	</script>
 
-	//Header Styles (compress & paste to header after release)
-	var ms=document.createElement("link");ms.rel="stylesheet";
-	ms.href="_header.css";document.getElementsByTagName("head")[0].appendChild(ms);
-	
-	//User Styles
-	var ms=document.createElement("link");ms.rel="stylesheet";
-	ms.href="_main.css";document.getElementsByTagName("head")[0].appendChild(ms);
-	var ms=document.createElement("link");ms.rel="stylesheet";
-	ms.href="_media.css";document.getElementsByTagName("head")[0].appendChild(ms);
-</script>
+	<!-- Load CSS compiled without Bootstrap & Header styles (after release) -->
+	<script>var ms=document.createElement("link");ms.rel="stylesheet";
+		// ms.href="compiled.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
+	</script>
 
-<!-- Load CSS compiled without Bootstrap & Header styles (after release) -->
-<script>var ms=document.createElement("link");ms.rel="stylesheet";
-	// ms.href="compiled.min.css";document.getElementsByTagName("head")[0].appendChild(ms);
-</script>
-
-<!-- Load Scripts -->
-<script>var scr = {"scripts":[
-	{"src" : "libs/modernizr/modernizr.js", "async" : false},
-	{"src" : "libs/jquery/jquery-1.11.2.min.js", "async" : false},
-	{"src" : "libs/waypoints/waypoints.min.js", "async" : false},
-	{"src" : "libs/animate/animate-css.js", "async" : false},
-	{"src" : "libs/plugins-scroll/plugins-scroll.js", "async" : false},
-	{"src" : "js/common.js", "async" : false}
-	]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
-</script>
+	<!-- Load Scripts -->
+	<script>var scr = {"scripts":[
+		{"src" : "libs/modernizr/modernizr.js", "async" : false},
+		{"src" : "libs/jquery/jquery-1.11.2.min.js", "async" : false},
+		{"src" : "libs/waypoints/waypoints.min.js", "async" : false},
+		{"src" : "libs/animate/animate-css.js", "async" : false},
+		{"src" : "libs/plugins-scroll/plugins-scroll.js", "async" : false},
+		{"src" : "js/common.js", "async" : false}
+		]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
+	</script>
 
 </body>
 </html>

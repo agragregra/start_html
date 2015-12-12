@@ -19,7 +19,7 @@ function Server(options) {
   options = this.options = options || {};
   events.EventEmitter.call(this);
 
-  options.livereload = options.livereload || path.join(__dirname, '../node_modules/livereload-js/dist/livereload.js');
+  options.livereload = options.livereload || require.resolve('livereload-js/dist/livereload.js');
   options.port = parseInt(options.port || 35729, 10);
 
   this.on('GET /', this.index.bind(this));
