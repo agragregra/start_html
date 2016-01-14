@@ -1,36 +1,23 @@
-global.hostname = "localhost";
+var gulp         = require('gulp'),
+		sass         = require('gulp-sass'),
+		autoprefixer = require('gulp-autoprefixer'),
+		minifycss    = require('gulp-minify-css'),
+		rename       = require('gulp-rename'),
+		browserSync  = require('browser-sync').create();
 
-var gulp = require('gulp'),
-sass = require('gulp-sass'),
-autoprefixer = require('gulp-autoprefixer'),
-minifycss = require('gulp-minify-css'),
-rename = require('gulp-rename');
-
-gulp.task('express', function() {
-	var express = require('express');
-	var app = express();
-	app.use(require('connect-livereload')({port: 35729}));
-	app.use(express.static(__dirname + '/app'));
-	app.listen('80', hostname);
+gulp.task('browser-sync', ['styles'], function() {
+    browserSync.init({
+        server: {
+            baseDir: "./app"
+        },
+        notify: false
+    });
+    gulp.watch('sass/*.sass', ['styles']);
+		gulp.watch('app/*.html').on('change', browserSync.reload);
 });
-
-var tinylr;
-gulp.task('livereload', function() {
-	tinylr = require('tiny-lr')();
-	tinylr.listen(35729);
-});
-
-function notifyLiveReload(event) {
-	var fileName = require('path').relative(__dirname, event.path);
-	tinylr.changed({
-		body: {
-			files: [fileName]
-		}
-	});
-}
 
 gulp.task('styles', function () {
-	gulp.src('sass/*.sass')
+	return gulp.src('sass/*.sass')
 	.pipe(sass({
 		includePaths: require('node-bourbon').includePaths
 	}).on('error', sass.logError))
@@ -40,15 +27,8 @@ gulp.task('styles', function () {
 		cascade: false
 	}))
 	.pipe(minifycss())
-	.pipe(gulp.dest('app'));
+	.pipe(gulp.dest('app'))
+	.pipe(browserSync.stream());
 });
 
-gulp.task('watch', function() {
-	gulp.watch('sass/*.sass', ['styles']);
-	gulp.watch('app/*.css', notifyLiveReload);
-	gulp.watch('app/*.html', notifyLiveReload);
-});
-
-gulp.task('default', ['styles', 'express', 'livereload', 'watch'], function() {
-
-});
+gulp.task('default', ['browser-sync']);
