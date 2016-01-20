@@ -6,14 +6,12 @@ var gulp         = require('gulp'),
 		browserSync  = require('browser-sync').create();
 
 gulp.task('browser-sync', ['styles'], function() {
-    browserSync.init({
-        server: {
-            baseDir: "./app"
-        },
-        notify: false
-    });
-    gulp.watch('sass/*.sass', ['styles']);
-		gulp.watch('app/*.html').on('change', browserSync.reload);
+		browserSync.init({
+				server: {
+						baseDir: "./app"
+				},
+				notify: false
+		});
 });
 
 gulp.task('styles', function () {
@@ -28,4 +26,10 @@ gulp.task('styles', function () {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('default', ['browser-sync']);
+gulp.task('watch', function () {
+	gulp.watch('sass/*.sass', ['styles']);
+	gulp.watch('app/js/*.js').on("change", browserSync.reload);
+	gulp.watch('app/*.html').on('change', browserSync.reload);
+});
+
+gulp.task('default', ['browser-sync', 'watch']);

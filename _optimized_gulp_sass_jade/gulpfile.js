@@ -6,16 +6,14 @@ var gulp         = require('gulp'),
 		browserSync  = require('browser-sync').create(),
 		jade         = require('gulp-jade');
 
-gulp.task('browser-sync', ['styles'], function() {
+gulp.task('browser-sync', ['styles', 'jade'], function() {
 		browserSync.init({
 				server: {
 						baseDir: "./app"
 				},
 				notify: false
 		});
-		gulp.watch('sass/*.sass', ['styles']);
-		gulp.watch('jade/*.jade', ['templates']);
-		gulp.watch('app/*.html').on('change', browserSync.reload);
+		
 });
 
 gulp.task('styles', function () {
@@ -30,15 +28,17 @@ gulp.task('styles', function () {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('templates', function() {
-	var YOUR_LOCALS = {};
-
-	gulp.src('jade/*.jade')
-		.pipe(jade({
-			locals: YOUR_LOCALS,
-			pretty: true
-		}))
-		.pipe(gulp.dest('app'))
+gulp.task('jade', function() {
+	return gulp.src('jade/*.jade')
+	.pipe(jade())
+	.pipe(gulp.dest('app'));
 });
 
-gulp.task('default', ['browser-sync']);
+gulp.task('watch', function () {
+	gulp.watch('sass/*.sass', ['styles']);
+	gulp.watch('jade/*.jade', ['jade']);
+	gulp.watch('app/js/*.js').on("change", browserSync.reload);
+	gulp.watch('app/*.html').on('change', browserSync.reload);
+});
+
+gulp.task('default', ['browser-sync', 'watch']);
