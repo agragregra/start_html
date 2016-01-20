@@ -12,11 +12,15 @@ html(lang='ru')
 		
 		// Header CSS (First Sections of Website: paste after release from _header.min.css here)
 		style
+
+		// Load CSS & WebFonts Main Function
+		script !function(e){"use strict";function t(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function n(t,n){return e.localStorage&&localStorage[t+"_content"]&&localStorage[t+"_file"]===n}function a(t,a){if(e.localStorage&&e.XMLHttpRequest)n(t,a)?o(localStorage[t+"_content"]):l(t,a);else{var s=r.createElement("link");s.href=a,s.id=t,s.rel="stylesheet",s.type="text/css",r.getElementsByTagName("head")[0].appendChild(s),r.cookie=t}}function l(e,t){var n=new XMLHttpRequest;n.open("GET",t,!0),n.onreadystatechange=function(){4===n.readyState&&200===n.status&&(o(n.responseText),localStorage[e+"_content"]=n.responseText,localStorage[e+"_file"]=t)},n.send()}function o(e){var t=r.createElement("style");t.setAttribute("type","text/css"),r.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var r=e.document;e.loadCSS=function(e,t,n){var a,l=r.createElement("link");if(t)a=t;else{var o;o=r.querySelectorAll?r.querySelectorAll("style,link[rel=stylesheet],script"):(r.body||r.getElementsByTagName("head")[0]).childNodes,a=o[o.length-1]}var s=r.styleSheets;l.rel="stylesheet",l.href=e,l.media="only x",a.parentNode.insertBefore(l,t?a:a.nextSibling);var c=function(e){for(var t=l.href,n=s.length;n--;)if(s[n].href===t)return e();setTimeout(function(){c(e)})};return l.onloadcssdefined=c,c(function(){l.media=n||"all"}),l},e.loadLocalStorageCSS=function(l,o){n(l,o)||r.cookie.indexOf(l)>-1?a(l,o):t(e,"load",function(){a(l,o)})}}(this);
 		
 
-		// Load Main CSS Compilled without JS
+		// Load CSS Compilled without JS
 		noscript
-			link(rel='stylesheet', href='_main.min.css')
+			link(rel='stylesheet', href='css/fonts.min.css')
+			link(rel='stylesheet', href='css/main.min.css')
 
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
@@ -30,7 +34,7 @@ html(lang='ru')
 	body
 
 		// Здесь пишем код
-		
+		p Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Пор до рукописи семь повстречался путь алфавит то которой вскоре, послушавшись, единственное что рот дорогу великий прямо журчит необходимыми рыбными.
 
 		.hidden
 		
@@ -42,14 +46,11 @@ html(lang='ru')
 		<script src="libs/respond/respond.min.js"></script>
 		<![endif]-->
 		
-		// Load CSS
-		script.
-			function loadCSS(hf) {
-			var ms=document.createElement("link");ms.rel="stylesheet";
-			ms.href=hf;document.getElementsByTagName("head")[0].appendChild(ms);
-			}
-			loadCSS("_header.min.css"); //Header Styles (compress & paste to header after release)
-			loadCSS("_main.min.css");   //User Styles + Media Queries
+		// Load CSS Start
+		script loadLocalStorageCSS( "webfonts", "/css/fonts.min.css?ver=1.0.0" );
+		script loadCSS( "/css/header.min.css?ver=1.0.0", false, "all" );
+		script loadCSS( "/css/main.min.css?ver=1.0.0", false, "all" );
+		// Load CSS End
 		
 		// Load Scripts
 		script.

@@ -23,13 +23,10 @@ gulp.task('styles', function () {
 	.pipe(sass({
 		includePaths: require('node-bourbon').includePaths
 	}).on('error', sass.logError))
-	.pipe(rename({suffix: '.min', prefix : '_'}))
-	.pipe(autoprefixer({
-		browsers: ['last 15 versions'],
-		cascade: false
-	}))
+	.pipe(rename({suffix: '.min', prefix : ''}))
+	.pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
 	.pipe(minifycss())
-	.pipe(gulp.dest('app'))
+	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
 });
 
