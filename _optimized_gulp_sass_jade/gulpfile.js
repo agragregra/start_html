@@ -4,9 +4,11 @@ var gulp         = require('gulp'),
 		minifycss    = require('gulp-minify-css'),
 		rename       = require('gulp-rename'),
 		browserSync  = require('browser-sync').create(),
-		jade         = require('gulp-jade');
+		jade         = require('gulp-jade'),
+		concat       = require('gulp-concat'),
+		uglify       = require('gulp-uglifyjs');
 
-gulp.task('browser-sync', ['styles', 'jade'], function() {
+gulp.task('browser-sync', ['styles', 'scripts', 'jade'], function() {
 		browserSync.init({
 				server: {
 						baseDir: "./app"
@@ -34,9 +36,23 @@ gulp.task('jade', function() {
 	.pipe(gulp.dest('app'));
 });
 
+gulp.task('scripts', function() {
+	return gulp.src([
+		'./app/libs/modernizr/modernizr.js',
+		'./app/libs/jquery/jquery-1.11.2.min.js',
+		'./app/libs/waypoints/waypoints.min.js',
+		'./app/libs/animate/animate-css.js',
+		'./app/libs/plugins-scroll/plugins-scroll.js',
+		])
+		.pipe(concat('libs.js'))
+		// .pipe(uglify()) //Minify libs.js
+		.pipe(gulp.dest('./app/js/'));
+});
+
 gulp.task('watch', function () {
 	gulp.watch('sass/*.sass', ['styles']);
 	gulp.watch('jade/*.jade', ['jade']);
+	gulp.watch('app/libs/**/*.js', ['scripts']);
 	gulp.watch('app/js/*.js').on("change", browserSync.reload);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 });
