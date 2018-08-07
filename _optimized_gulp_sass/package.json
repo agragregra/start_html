@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "First Gulp Project",
   "devDependencies": {
-    "browser-sync": "^2.12.5",
+    "browser-sync": "^2.24.6",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-clean-css": "^2.0.6",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
     "node-bourbon": "^4.2.8"
   }
 }
