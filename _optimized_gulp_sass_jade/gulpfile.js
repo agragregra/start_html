@@ -24,7 +24,7 @@ gulp.task('styles', function () {
 		includePaths: require('node-bourbon').includePaths
 	}).on('error', sass.logError))
 	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(autoprefixer({browsers: ['last 15 versions'], cascade: false}))
+	.pipe(autoprefixer({overrideBrowserslist: ['last 15 versions'], cascade: false}))
 	.pipe(minifycss())
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
