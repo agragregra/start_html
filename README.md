@@ -1,4 +1,4 @@
-<h1>Стартовые шаблоны для адаптивной верстки сайтов</h1>
+<h1>Стартовые шаблоны для адаптивной вёрстки сайтов</h1>
 
 Автор сборки: <a href="https://webdesign-master.ru" target="_blank">https://webdesign-master.ru</a>
 
@@ -16,7 +16,7 @@
 		<ul>
 			<li>fonts.css (sass) - файл для подключения шрифтов с примером;</li>
 			<li>main.css (sass) - основные пользовательские стили;</li>
-			<li>media.css - файл медиа запросов для адаптивной верстки с первоначальной Desktop First и Mobile First структурой;</li>
+			<li>media.css - файл медиа запросов для адаптивной вёрстки с первоначальной Desktop First и Mobile First структурой;</li>
 			<li>Подключенная и готовая к использованию библиотека миксинов <a href="http://bourbon.io/" target="_blank">Bourbon</a> (_clean_sass).</li>
 		</ul>
 	</li>
