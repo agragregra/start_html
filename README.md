@@ -4,7 +4,7 @@
 
 <h3>Получить нужный стартер:</h3>
 
-<p>Для получения нужного стартера у вас должна быть устрановлена среда Unix shell и Git. Если вы пользователь MacOS или Linux, команды клонирования Git будут доступны по-умолчанию. Если вы пользователь Windows, рекомендую использовать WSL. Инструкция по установке WSL и окружения для веб-разработки: <a href="https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html">https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html</a></p>
+<p>Для получения нужного стартера, у вас должна быть устрановлена среда Unix shell и Git. Если вы пользователь MacOS или Linux, команды клонирования Git будут доступны по-умолчанию. Если вы пользователь Windows, рекомендую использовать WSL. Инструкция по установке WSL и окружения для веб-разработки: <a href="https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html">https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html</a></p>
 
 <h4>Получить _optimized_gulp_sass:</h4>
 <code>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass .; rm -rf start_html</code>
