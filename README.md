@@ -1,9 +1,26 @@
 <h1>Стартовые шаблоны для адаптивной вёрстки сайтов</h1>
 
-Автор сборки: <a href="https://webdesign-master.ru" target="_blank">https://webdesign-master.ru</a>
+<p>Автор сборки: <a href="https://webdesign-master.ru" target="_blank">https://webdesign-master.ru</a></p>
 
-Чистые, готовые к бою HTML5 шаблоны (CSS и SASS), предназначенные для ускорения разработки современных адаптивных сайтов. Шаблоны содержат наиболее используемые и актуальные компоненты.
-Шаблоны поддерживаются и регулярно обновляются, перед стартом проекта - рекомендую скачать новую версию.
+<h3>Получить нужный стартер:</h3>
+
+<h4>Получить _optimized_gulp_sass</h4>
+<code>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass .; rm -rf start_html</code>
+
+<h4>Получить _clean_html</h4>
+<code>git clone https://github.com/agragregra/start_html; cp -r start_html/_clean_html .; rm -rf start_html</code>
+
+<h4>Получить _clean_sass</h4>
+<code>git clone https://github.com/agragregra/start_html; cp -r start_html/_clean_sass .; rm -rf start_html</code>
+
+<h4>Получить _optimized_html</h4>
+<code>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_html .; rm -rf start_html</code>
+
+<h4>Получить _optimized_gulp_sass_jade</h4>
+<code>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass_jade .; rm -rf start_html</code>
+
+<p>Чистые, готовые к бою HTML5 шаблоны (CSS и SASS), предназначенные для ускорения разработки современных адаптивных сайтов. Шаблоны содержат наиболее используемые и актуальные компоненты.
+Шаблоны поддерживаются и регулярно обновляются, перед стартом проекта - рекомендую скачать новую версию.</p>
 
 <h2>Что вошло в последнюю сборку:</h2>
 
