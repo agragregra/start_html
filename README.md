@@ -4,7 +4,7 @@
 
 <h3>Получить нужный стартер:</h3>
 
-<p>Для получения нужного стартера можно скачать весь архив c GitHub – зелёная кнопка <code>Code</code> -> <code>Download ZIP</code>, распаковать и удалить ненужные стартеры. Или можно автоматизировать получение нужного стартера. Для этого у вас должна быть устрановлена командная оболочка Unix и Git. Если вы пользователь MacOS или Linux, команды клонирования Git будут доступны по-умолчанию. Если вы пользователь Windows, рекомендую использовать WSL. Инструкция по установке WSL и окружения для веб-разработки: <a href="https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html">https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html</a></p>
+<p>Для получения нужного стартера можно скачать весь архив c GitHub – зелёная кнопка <code>Code</code> -> <code>Download ZIP</code>, распаковать и удалить ненужные папки. Или можно автоматизировать получение нужного стартера. Для этого у вас должна быть устрановлена командная оболочка Unix и Git. Если вы пользователь MacOS или Linux, команды клонирования Git будут доступны по-умолчанию. Если вы пользователь Windows, рекомендую использовать WSL. Инструкция по установке WSL и окружения для веб-разработки: <a href="https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html">https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html</a></p>
 
 <h4>Получить _optimized_gulp_sass:</h4>
 <pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass .; rm -rf start_html</pre>
