@@ -9,14 +9,14 @@
 <h4>Получить _optimized_gulp_sass:</h4>
 <pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass .; rm -rf start_html</pre>
 
+<h4>Получить _optimized_html:</h4>
+<pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_html .; rm -rf start_html</pre>
+
 <h4>Получить _clean_html:</h4>
 <pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_clean_html .; rm -rf start_html</pre>
 
 <h4>Получить _clean_sass:</h4>
 <pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_clean_sass .; rm -rf start_html</pre>
-
-<h4>Получить _optimized_html:</h4>
-<pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_html .; rm -rf start_html</pre>
 
 <h4>Получить _optimized_gulp_sass_jade:</h4>
 <pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass_jade .; rm -rf start_html</pre>
