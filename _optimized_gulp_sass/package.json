@@ -12,6 +12,6 @@
     "gulp-sass": "^5.0.0",
     "gulp-uglify-es": "^3.0.0",
     "node-bourbon": "^4.2.8",
-    "sass": "^1.38.0"
+    "sass": "^1.42.1"
   }
 }
