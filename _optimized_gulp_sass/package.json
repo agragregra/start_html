@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "First Gulp Project",
   "devDependencies": {
-    "browser-sync": "^2.27.5",
+    "browser-sync": "^2.27.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -12,6 +12,6 @@
     "gulp-sass": "^5.0.0",
     "gulp-uglify-es": "^3.0.0",
     "node-bourbon": "^4.2.8",
-    "sass": "^1.42.1"
+    "sass": "^1.45.1"
   }
 }
