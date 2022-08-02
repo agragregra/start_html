@@ -23,7 +23,7 @@ gulp.task('styles', function () {
 	return gulp.src('sass/**/*.sass')
 	.pipe(sass({
 		outputStyle: 'expanded',
-		includePaths: require('node-bourbon').includePaths
+		includePaths: require('bourbon').includePaths
 	}).on('error', sass.logError))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer({
