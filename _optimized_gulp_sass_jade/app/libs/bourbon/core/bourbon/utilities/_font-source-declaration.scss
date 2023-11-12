@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/// Builds the `src` list for an `@font-face` declaration.
+///
+/// @link https://goo.gl/Ru1bKP
+///
+/// @argument {string} $font-family
+///
+/// @argument {string} $file-path
+///
+/// @argument {boolean} $asset-pipeline
+///
+/// @argument {list} $file-formats
+///
+/// @return {list}
+///
+/// @require {function} _contains
+///
+/// @access private
+
+@function _font-source-declaration(
+  $font-family,
+  $file-path,
+  $asset-pipeline,
+  $file-formats
+) {
+  $src: ();
+
+  $formats-map: (
+    "woff2": "#{$file-path}.woff2" format("woff2"),
+    "woff": "#{$file-path}.woff" format("woff"),
+  );
+
+  @each $format in $file-formats {
+    @if _contains(map-keys($formats-map), $format) {
+      $value: map-get($formats-map, $format);
+      $file-path: nth($value, 1);
+      $font-format: nth($value, 2);
+
+      @if $asset-pipeline == true {
+        $src: append($src, font-url($file-path) $font-format, comma);
+      } @else {
+        $src: append($src, url($file-path) $font-format, comma);
+      }
+    } @else {
+      @error "`#{$file-formats}` contains an unsupported font file format. " +
+        "Must be `woff` and/or `woff2`.";
+    }
+  }
+
+  @return $src;
+}

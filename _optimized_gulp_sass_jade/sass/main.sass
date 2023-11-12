@@ -1,8 +1,10 @@
-@import "bourbon"
-@import "vars.sass"
+@use 'sass:math'
 
-//Load Libs SASS
-@import "app/libs/animate/animate.sass"
+@import bourbon
+@import vars
+
+// Load Libs SASS
+@import app/libs/animate/animate.sass
 
 *::-webkit-input-placeholder
 	color: #666
@@ -27,8 +29,8 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-//Custom Styles Here
+// Custom Styles Here
 
 
-//ALWAYS END
-@import "media"
+// ALWAYS END
+@import media
