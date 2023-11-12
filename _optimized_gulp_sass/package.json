@@ -1,17 +1,24 @@
 {
-  "name": "gulp-project",
-  "version": "1.0.0",
-  "description": "First Gulp Project",
+  "name": "optimized_gulp_sass",
+  "version": "1.1",
+  "description": "optimized_gulp_sass - Start HTML Template",
+	"main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WebDesign Master",
+  "type": "module",
+  "license": "ISC",
   "devDependencies": {
-    "bourbon": "^7.3.0",
+    "autoprefixer": "^10.4.16",
     "browser-sync": "^2.29.3",
+    "cssnano": "^6.0.1",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-rename": "^2.0.0",
+		"gulp-rename": "^2.0.0",
+    "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
-    "gulp-uglify-es": "^3.0.0",
-    "sass": "^1.66.1"
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.69.5"
   }
 }

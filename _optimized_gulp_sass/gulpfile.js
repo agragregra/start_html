@@ -1,62 +1,64 @@
-var gulp         = require('gulp'),
-		sass         = require('gulp-sass')(require('sass')),
-		autoprefixer = require('gulp-autoprefixer'),
-		cleanCSS     = require('gulp-clean-css'),
-		rename       = require('gulp-rename'),
-		browserSync  = require('browser-sync').create(),
-		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglify-es').default;
+import pkg from 'gulp'
+const { src, dest, parallel, series, watch } = pkg
 
-gulp.task('browser-sync', function() {
+import browserSync   from 'browser-sync'
+import gulpSass      from 'gulp-sass'
+import * as dartSass from 'sass'
+const  sass          = gulpSass(dartSass)
+import postCss       from 'gulp-postcss'
+import cssnano       from 'cssnano'
+import concat        from 'gulp-concat'
+import rename        from 'gulp-rename'
+import uglify        from 'gulp-uglify'
+import autoprefixer  from 'autoprefixer'
+
+function browsersync() {
 	browserSync.init({
 		server: {
-			baseDir: 'app'
+			baseDir: 'app/'
 		},
+		ghostMode: { clicks: false },
 		notify: false,
-		// online: false, // Work offline without internet connection
-		// tunnel: true, tunnel: 'projectname', // Demonstration page: http://projectname.localtunnel.me
+		online: true,
+		// tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
 	})
-});
-function bsReload(done) { browserSync.reload(); done() };
+}
 
-gulp.task('styles', function () {
-	return gulp.src('sass/**/*.sass')
-	.pipe(sass({
-		outputStyle: 'expanded',
-		includePaths: require('bourbon').includePaths
-	}).on('error', sass.logError))
-	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(autoprefixer({
-		// grid: true, // Optional. Enable CSS Grid
-		overrideBrowserslist: ['last 10 versions']
-	}))
-	.pipe(cleanCSS())
-	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.stream());
-});
-
-gulp.task('scripts', function() {
-	return gulp.src([
+function scripts() {
+	return src([
 		'app/libs/modernizr/modernizr.js',
 		'app/libs/jquery/jquery-1.11.2.min.js',
 		'app/libs/waypoints/waypoints.min.js',
 		'app/libs/animate/animate-css.js',
 		])
-		.pipe(concat('libs.js'))
-		.pipe(uglify()) //Minify libs.js
-		.pipe(gulp.dest('app/js/'))
-		.pipe(browserSync.reload({ stream: true }));
-});
+	.pipe(concat('libs.js'))
+	.pipe(uglify()) // // Minify libs.js
+	.pipe(dest('app/js'))
+	.pipe(browserSync.stream())
+}
 
-gulp.task('code', function() {
-	return gulp.src('app/**/*.html')
-	.pipe(browserSync.reload({ stream: true }))
-});
+function styles() {
+	return src(['sass/**/*.sass'])
+		.pipe(sass({
+			'include css': true,
+			includePaths: ['app/libs/bourbon/core']
+		}))
+		.pipe(postCss([
+			autoprefixer({ grid: 'autoplace' }),
+			cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
+		]))
+		.pipe(rename({suffix: '.min', prefix : ''}))
+		.pipe(dest('app/css'))
+		.pipe(browserSync.stream())
+}
 
-gulp.task('watch', function () {
-	gulp.watch('sass/**/*.sass', gulp.parallel('styles'));
-	gulp.watch(['app/js/common.js', 'app/libs/**/*.js'], gulp.parallel('scripts'));
-	gulp.watch('app/*.html', gulp.parallel('code'));
-});
+function startwatch() {
+	watch(['sass/**/*.sass'], { usePolling: true }, styles)
+	watch(['app/js/common.js', 'app/libs/**/*.js'], { usePolling: true }, scripts)
+	watch(['app/*.html'], { usePolling: true }).on('change', browserSync.reload)
+}
 
-gulp.task('default', gulp.parallel('styles', 'scripts', 'browser-sync', 'watch'));
+export { scripts, styles }
+export let assets = series(scripts, styles)
+
+export default series(scripts, styles, parallel(browsersync, startwatch))
