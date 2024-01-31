@@ -1,9 +1,9 @@
 body {
 	font-family: sans-serif;
-	font-size: 16px;
-	min-width: 320px;
+	font-size: 19px;
+	min-width: 350px;
 	position: relative;
-	line-height: 1.6;
+	line-height: 1.5;
 	font-family: "RobotoRegular", sans-serif;
 	overflow-x: hidden;
 }
