@@ -43,7 +43,10 @@ function styles() {
       'include css': true,
       silenceDeprecations: ['legacy-js-api', 'mixed-decls', 'color-functions', 'global-builtin', 'import'],
       loadPaths: ['./', 'app/libs/bourbon/core']
-    }))
+    })).on('error', function handleError(err) {
+      console.error('❌ Preprocessor error:', err.message);
+      this.emit('end');
+    })
     .pipe(postCss([
       autoprefixer({ grid: 'autoplace' }),
       cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
