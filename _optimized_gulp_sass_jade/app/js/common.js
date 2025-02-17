@@ -1,5 +1,7 @@
 $(function() {
 
+  // document.body.hidden = true // test
+
   //SVG Fallback
   if(!Modernizr.svg) {
     $("img[src*='svg']").attr("src", function() {

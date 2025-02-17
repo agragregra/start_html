@@ -42,7 +42,7 @@ function styles() {
     .pipe(sass({
       'include css': true,
       silenceDeprecations: ['legacy-js-api', 'mixed-decls', 'color-functions', 'global-builtin', 'import'],
-      loadPaths: ['./']
+      loadPaths: ['./', 'app/libs/bourbon/core']
     }))
     .pipe(postCss([
       autoprefixer({ grid: 'autoplace' }),
