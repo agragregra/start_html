@@ -41,7 +41,8 @@ function styles() {
   return src(['sass/**/*.sass'])
     .pipe(sass({
       'include css': true,
-      includePaths: ['app/libs/bourbon/core']
+      silenceDeprecations: ['legacy-js-api', 'mixed-decls', 'color-functions', 'global-builtin', 'import'],
+      loadPaths: ['./']
     }))
     .pipe(postCss([
       autoprefixer({ grid: 'autoplace' }),
