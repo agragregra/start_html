@@ -7,19 +7,19 @@
 <p>Для получения нужного стартера можно скачать весь архив c GitHub – зелёная кнопка <code>Code</code> -> <code>Download ZIP</code>, распаковать и удалить ненужные папки. Или можно автоматизировать получение нужного стартера. Для этого у вас должна быть устрановлена командная оболочка Unix и Git. Если вы пользователь MacOS или Linux, команды клонирования Git будут доступны по умолчанию. Если вы пользователь Windows, рекомендую использовать WSL. Инструкция по установке WSL и окружения для веб-разработки в операционной системе Windows есть на сайте: <a href="https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html">https://webdesign-master.ru/blog/tools/wsl-nodejs-new.html</a></p>
 
 <h4>Получить _optimized_gulp_sass:</h4>
-<pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass .; rm -rf start_html</pre>
+<pre>git clone https://github.com/webdesign-masteru/start_html; cp -r start_html/_optimized_gulp_sass .; rm -rf start_html</pre>
 
 <h4>Получить _optimized_html:</h4>
-<pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_html .; rm -rf start_html</pre>
+<pre>git clone https://github.com/webdesign-masteru/start_html; cp -r start_html/_optimized_html .; rm -rf start_html</pre>
 
 <h4>Получить _clean_html:</h4>
-<pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_clean_html .; rm -rf start_html</pre>
+<pre>git clone https://github.com/webdesign-masteru/start_html; cp -r start_html/_clean_html .; rm -rf start_html</pre>
 
 <h4>Получить _clean_sass:</h4>
-<pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_clean_sass .; rm -rf start_html</pre>
+<pre>git clone https://github.com/webdesign-masteru/start_html; cp -r start_html/_clean_sass .; rm -rf start_html</pre>
 
 <h4>Получить _optimized_gulp_sass_jade:</h4>
-<pre>git clone https://github.com/agragregra/start_html; cp -r start_html/_optimized_gulp_sass_jade .; rm -rf start_html</pre>
+<pre>git clone https://github.com/webdesign-masteru/start_html; cp -r start_html/_optimized_gulp_sass_jade .; rm -rf start_html</pre>
 
 <br><br>
 
