@@ -8,7 +8,7 @@ $(function() {
   };
 
   //E-mail Ajax Send
-  //Documentation & Example: https://github.com/webdesign-masteru/uniMail
+  //Documentation & Example: https://github.com/agragregra/uniMail
   $("form").submit(function() { //Change
     var th = $(this);
     $.ajax({

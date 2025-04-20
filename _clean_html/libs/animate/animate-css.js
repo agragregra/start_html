@@ -1,6 +1,6 @@
 //Animate CSS + WayPoints javaScript Plugin
 //Example: $(".element").animated("zoomInUp");
-//Author URL: http://webdesign-masteru.github.io
+//Author URL: https://webdesign-master.ru
 (function($) {
   $.fn.animated = function(inEffect) {
     $(this).each(function() {
